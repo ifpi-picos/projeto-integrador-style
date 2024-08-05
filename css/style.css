@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(fundo-style.png);
+    background: url('../imagens/fundo-style.png');
     background-size: cover;
     background-position: center;
 }
