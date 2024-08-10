@@ -12,13 +12,16 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../imagens/fundo-style.png');
     background-size: cover;
     background-position: center;
+    background: linear-gradient(135deg, #7a6555  0%, #ddcece 100%);
 }
+
 
 header {
     position: fixed;
+    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     top: 0;
     left: 0;
     width: 100%;
@@ -31,13 +34,17 @@ header {
 
 .logo {
     font-size: 2em;
-    color: #fff;
+    color: black;
     user-select: none;
+}
+.image{
+    display: flex;
+    width: 50px;
 }
 
 .navigation a {
     font-size: 1.1em;
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
@@ -78,26 +85,34 @@ header {
     transition: .5s;
 }
 
-.navigation .btnLogin-popup {
-    width: 130px;
-    height: 50px;
+.btn-link {
     background: transparent;
     border: 2px solid #efebeb;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
-    color: #fff;
+    color: white;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
+    padding: 1rem;
 }
 
-.navigation .btnLogin-popup:hover {
-    background: white;
-    color: black;
+.btn-login{
+    background: #fff;
+    color: #000 !important;
 }
 
+
+.btn-cadastro{
+    background: transparent !important;
+    color: #fff !important;
+}
+
+footer{
+    background: #fff;
+}
 
 
 .container {
