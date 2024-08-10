@@ -9,45 +9,39 @@
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background: linear-gradient(135deg, #7a6555  0%, #ddcece 100%);
+    background: linear-gradient(135deg, #7a6555 0%, #ddcece 100%);
 }
-
 
 header {
     position: fixed;
-    background: transparent;
-    background: rgba(255, 255, 255, 0.1);
-    top: 0;
-    left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 2em;
-    color: black;
-    user-select: none;
+    font-size: 2.5em;
+    color: #333;
 }
-.image{
+
+.wauan{
     display: flex;
-    width: 50px;
+    height: 50px;
 }
 
 .navigation a {
     font-size: 1.1em;
-    color: black;
+    color: #333;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 30px;
     position: relative;
 }
 
@@ -55,134 +49,92 @@ header {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: -5px;
     width: 100%;
-    height: 3px;
-    background: #101010;
-    border-radius: 5px;
-    transform-origin: right;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
     transform: scaleX(0);
-    transition: transform .5s;
+    transition: transform 0.3s;
 }
 
 .navigation a:hover::after {
-    transform-origin: left;
     transform: scaleX(1);
 }
 
-.button {
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 2px solid #efebeb;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #fff;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: .5s;
-}
-
 .btn-link {
-    background: transparent;
-    border: 2px solid #efebeb;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: white;
-    font-weight: 500;
-    margin-left: 40px;
-    transition: .5s;
-    padding: 1rem;
-}
-
-.btn-login{
-    background: #fff;
-    color: #000 !important;
-}
-
-
-.btn-cadastro{
-    background: transparent !important;
-    color: #fff !important;
-}
-
-footer{
-    background: #fff;
-}
-
-
-.container {
-    display: flex;
-    align-items: center;
-}
-
-.text {
-    flex: 1;
-    padding-left: 100px;
-    color: white;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
-
-.image {
-    flex: 1;
-    padding: 10px;
-}
-
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.main__info div a{
-    background: var(--red);
-}
-
-
-.btn:hover {
-    background: white;
-    color: black;
-}
-
-.login-register p {
-    font-size: .9em;
-    color: #ffffff;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1em;
     text-align: center;
-    margin-top: 20px;
+    transition: background 0.3s, color 0.3s;
 }
 
-.login-register a {
-    color: #ffff8e;
-    text-decoration: none;
+.btn-login {
+    background: #fff;
 }
 
-.login-register a:hover {
-    text-decoration: underline;
+.btn-register {
+    background: transparent;
+    color: #fff;
 }
 
-.remember-forgot {
+.btn-link:hover {
+    background: #333;
+    color: #fff;
+}
+
+main {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    font-size: .9em;
-    color: #ffffff;
-    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
-.remember-forgot label {
+.hero {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+.hero-text {
+    flex: 1;
+    color: #fff;
+    max-width: 600px;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.remember-forgot a {
-    color: #ffff8e;
-    text-decoration: none;
+.hero-image img {
+    max-width: 100%;
+    height: 435px;
 }
 
-.remember-forgot a:hover {
-    text-decoration: underline;
+footer {
+    background: #fff;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
 }
