@@ -12,14 +12,6 @@
         <div class="logo">
             <img src="imagens/logo-form.png" alt="Logo">
         </div>
-        <nav>
-            <ul class="menu">
-                <li class="menu-item active">Verão</li>
-                <li class="menu-item">Encontro</li>
-                <li class="menu-item">Casual</li>
-                <!-- Adicione mais itens aqui -->
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -31,17 +23,32 @@
         <section class="form-section">
             <form>
                 <div class="form-group">
-                    <label for="estilo">Qual estilo de roupa você tem preferência?</label>
+                    <label for="estilo">Qual é o seu gênero?</label>
                     <select id="estilo" name="estilo">
-                        <option value="casual">Casual</option>
-                        <option value="romantico">Romântico</option>
-                        <option value="outro">Outro</option>
+                        <option value="casual">Masculino</option>
+                        <option value="romantico">Feminino</option>
+                        <option value="outro">Prefiro não dizer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estilo">Qual é o seu tipo de corpo?</label>
+                    <select id="estilo" name="estilo">
+                        <option value="casual">Small</option>
+                        <option value="romantico">Mid size</option>
+                        <option value="outro">Plus size</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estilo">Qual é o seu formato de corpo?</label>
+                    <select id="estilo" name="estilo">
+                        <option value="casual">Ampulheta</option>
+                        <option value="romantico"></option>
+                        <option value="outro">Plus size</option>
                     </select>
                 </div>
 
-                <!-- Adicione mais perguntas aqui -->
-
                 <button type="submit">Enviar</button>
+                <!-- Adicione mais perguntas aqui -->
             </form>
         </section>
     </main>
@@ -53,4 +60,3 @@
     <script src="js/form.js"></script>
 </body>
 </html>
-
