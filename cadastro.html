@@ -11,45 +11,48 @@
 
 <body>
     <header>
-        <h1 class="logo">Style</h1>
+        <div class="wauan">
+            <img src="imagens/logo-form.png" alt="Logo">
+        </div>
+
         <nav class="navigation">
-            <a href="#">Home</a>
+            <a href="#"><a href="index.html">Início</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
-            <a href="login.html" class="btn-link btn-login">Login</a>
-            <a href="formulario.html" class="btn-link btn-register">Register</a>
+            <a href="login.html" class="btn-link btn-login">Entrar</a>
+            <a href="cadastro.html" class="btn-link btn-register">Cadastrar-se</a>
         </nav>
     </header>
 
     <main>
         <section class="form-container">
-            <h2>Create an Account</h2>
+            <h2>Criar uma Conta</h2>
             <form class="register-form">
                 <div class="form-group">
-                    <label for="name">Full Name</label>
+                    <label for="name">Nome completo</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
+                    <label for="password">Senha</label>
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
+                    <label for="confirm-password">Confirmar senha</label>
                     <input type="password" id="confirm-password" name="confirm-password" required>
                 </div>
-                <a href="formulario.html" class="btn-submit">Register</a>
+                <a href="formulario.html" class="btn-submit">Cadastrar-se</a>
             </form>
-            <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
+            <p class="login-link">Já possui uma conta? <a href="login.html">Entrar</a></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Style. All rights reserved.</p>
+        <p>&copy; 2024 Style. Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/script.js"></script>

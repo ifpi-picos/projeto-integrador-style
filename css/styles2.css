@@ -31,6 +31,11 @@ header {
     color: #333;
 }
 
+.wauan{
+    display: flex;
+    height: 50px;
+}
+
 .navigation a {
     font-size: 1.1em;
     color: #333;
@@ -55,6 +60,25 @@ header {
 
 .navigation a:hover::after {
     transform: scaleX(1);
+}
+
+.btn-link {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1em;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-login {
+    background: #fff;
+}
+
+.btn-register {
+    background: transparent;
+    color: #fff;
 }
 
 main {
