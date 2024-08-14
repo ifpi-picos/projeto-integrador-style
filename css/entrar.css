@@ -45,8 +45,8 @@ a {
 
 button {
   border-radius: 20px;
-  border: 1px solid #7d4e46;
-  background-color: #7d4e46;
+  border: 1px solid #9F7AEA;
+  background-color: #9F7AEA;
   color: #FFFFFF;
   font-size: 12px;
   font-weight: bold;
@@ -87,6 +87,18 @@ input {
   margin: 8px 0;
   width: 100%;
 }
+
+.isabel {
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #9F7AEA;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: bold;
+}
+
+
+
 
 .container {
   background-color: #fff;
@@ -159,9 +171,9 @@ input {
 }
 
 .overlay {
-  background: #6e4750;
-  background: -webkit-linear-gradient(to right, #5c362f, #5f3f46);
-  background: linear-gradient(to right, #70433b, #79575f);
+  background: #9F7AEA;
+  background: -webkit-linear-gradient(to right, #9F7AEA, #8b69cf);
+  background: linear-gradient(to right, #9F7AEA, #8b69cf);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
