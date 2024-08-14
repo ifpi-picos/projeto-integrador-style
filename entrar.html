@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website With Login & Registration | Codehal</title>
+    <link rel="stylesheet" href="css/entrar.css">
+</head>
+
+<body>
+<img src="imagens/logo-form.png">
+<div class="container" id="container">
+  <div class="form-container sign-up-container">
+    <form action="#">
+      <h1>Criar Conta</h1>
+      <div class="social-container">
+        <a href="#" class="social"><img src="imagens/google.webp" alt="Google" class="social-icon"></a>
+        <a href="#" class="social"><img src="imagens/apple.png" alt="Apple" class="social-icon"></a>
+        <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
+      </div>
+      <span>ou use seu e-mail para se cadastrar</span>
+      <input type="text" placeholder="Nome" />
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Senha" />
+      <button>Cadastre-se</button>
+    </form>
+  </div>
+  <div class="form-container sign-in-container">
+    <form action="#">
+      <h1>Login</h1>
+      <div class="social-container">
+        <a href="#" class="social"><img src="imagens/google.webp" alt="Google" class="social-icon"></a>
+        <a href="#" class="social"><img src="imagens/apple.png" alt="Apple" class="social-icon"></a>
+        <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
+      </div>
+      <span>ou use sua conta</span>
+      <input type="email" placeholder="Email" />
+      <input type="password" placeholder="Senha" />
+      <a href="#">Esqueceu sua senha?</a>
+      <button>Entrar</button>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Bem-vindo de Volta!</h1>
+        <p>Para se manter conectado conosco, faça login com suas informações pessoais</p>
+        <button class="ghost" id="signIn">Entrar</button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h1>Olá!</h1>
+        <p>Insira seus dados pessoais e crie seu estilo conosco</p>
+        <button class="ghost" id="signUp">Cadastre-se</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/entrar.js"></script>
+</body>
+
+</html>
