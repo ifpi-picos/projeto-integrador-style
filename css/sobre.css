@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #D3C7E6
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.wauan{
+    display: flex;
+    height: 50px;
+}
+
+.navigation a {
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    position: relative;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+.btn-link {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    color: #333;
+    font-size: 1em;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-login {
+    background: #fff;
+}
+
+.btn-register {
+    background: transparent;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+    
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texto {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.texto h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.texto h3 {
+    font-size: 18px;
+    color: #7d7d9c;
+    margin-top: 20px;
+}
+
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    border-radius: 10px;
+}
