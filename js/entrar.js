@@ -9,3 +9,8 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
   container.classList.remove("right-panel-active");
 });
+
+function toggleNav(){
+  const nav =  document.querySelector('nav');
+  nav.classList.toggle('mobile');
+}

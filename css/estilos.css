@@ -191,7 +191,7 @@ p {
 }
 
 span {
-    font-size: 12px;
+    font-size: 40px;
 }
 
 a {
@@ -681,3 +681,68 @@ footer {
     border-radius: 10px;
     font-size: 2em;
 }
+
+@media(max-width: 780px) {
+    .container{
+        flex-direction: column;
+        margin-top: 70px;
+    }
+
+    .services{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .service{
+        width: 100%;
+    }
+}
+
+header .Nivia {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: #282a36;
+    align-items: center;
+    color: #50fa7b;
+    position: fixed;
+    width: 100%;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: #50fa7b;
+    padding: 1rem;
+  }
+  
+  header a:hover {
+    background-color: #44475a;
+  }
+  
+  header span {
+    display: none;
+  }
+  
+  @media(max-width: 576px) {
+    nav {
+      display: none;
+    }
+  
+    header span {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+  
+    nav.mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+  }
