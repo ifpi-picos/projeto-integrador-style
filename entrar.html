@@ -15,7 +15,7 @@
 <img src="imagens/logo-form.png">
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
+    <form>
       <h1>Criar Conta</h1>
       <div class="social-container">
         <a href="#" class="social"><img src="imagens/google.webp" alt="Google" class="social-icon"></a>
@@ -26,7 +26,7 @@
       <input type="text" id="nome" placeholder="Nome" required/>
       <input type="email" id="email" placeholder="Email" required/>
       <input type="password" id="senha" placeholder="Senha" required/>
-      <button>Entrar</button>
+      <button type="button" onclick="adicionarUsuario()">Cadastrar</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -55,7 +55,6 @@
         <h1>Olá!</h1>
         <p>Insira seus dados pessoais e crie seu estilo conosco</p>
         <button
-         onclick="adicionarUsuario()"
          class="ghost" 
          id="signUp">Cadastre-se</button>
       </div>
@@ -64,6 +63,7 @@
 </div>
 
 <script src="js/entrar.js"></script>
+<script src="js/users.js"></script>
 </body>
 
 </html>
