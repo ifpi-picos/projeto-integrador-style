@@ -1,6 +1,6 @@
 
 async function adicionarUsuario() {
-    const campoNome = document.querySelector('#nome');
+    const campoName = document.querySelector('#nome');
     const campoEmail = document.querySelector("#email");
     const campoSenha = document.querySelector("#senha");
   
