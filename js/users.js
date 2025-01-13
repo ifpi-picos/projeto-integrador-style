@@ -10,7 +10,7 @@ async function adicionarUsuario() {
       password: campoSenha.value
     };
   
-    const resposta = await fetch('https://app-js-3kp4.onrender.com', {
+    const resposta = await fetch('https://app-js-3kp4.onrender.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
