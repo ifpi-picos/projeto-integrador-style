@@ -1,16 +1,16 @@
 
 async function adicionarUsuario() {
-    const campoNome = document.querySelector('#nome');
+    const campoName = document.querySelector('#nome');
     const campoEmail = document.querySelector("#email");
     const campoSenha = document.querySelector("#senha");
   
     const usuario = {
-      name: campoNome.value,
+      name: campoName.value,
       email: campoEmail.value,
       password: campoSenha.value
     };
   
-    const resposta = await fetch('https://app-js-3kp4.onrender.com', {
+    const resposta = await fetch('https://app-js-3kp4.onrender.com/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -28,4 +28,9 @@ async function adicionarUsuario() {
       console.log('Erro ao realizar cadastro!!');
     }
   }
+  
+
+
+
+
   

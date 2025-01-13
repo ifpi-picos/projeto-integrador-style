@@ -15,7 +15,7 @@
 <img src="imagens/logo-form.png">
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
+    <form>
       <h1>Criar Conta</h1>
       <div class="social-container">
         <a href="#" class="social"><img src="imagens/google.webp" alt="Google" class="social-icon"></a>
@@ -23,10 +23,10 @@
         <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
       </div>
       <span>ou use seu e-mail para se cadastrar</span>
-      <input type="text" placeholder="Nome" required/>
-      <input type="email" placeholder="Email" required/>
-      <input type="password" placeholder="Senha" required/>
-      <a href="formulario.html" class="isabel">CADASTRE-SE</a>
+      <input type="text" id="nome" placeholder="Nome" required/>
+      <input type="email" id="email" placeholder="Email" required/>
+      <input type="password" id="senha" placeholder="Senha" required/>
+      <button type="button" onclick="adicionarUsuario()">Cadastrar</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -38,7 +38,7 @@
         <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
       </div>
       <span>ou use sua conta</span>
-      <input type="email" placeholder="Email" />
+      <input type="email"  placeholder="Email" />
       <input type="password" placeholder="Senha" />
       <a href="#">Esqueceu sua senha?</a>
       <button>Entrar</button>
@@ -54,13 +54,16 @@
       <div class="overlay-panel overlay-right">
         <h1>Olá!</h1>
         <p>Insira seus dados pessoais e crie seu estilo conosco</p>
-        <button class="ghost" id="signUp">Cadastre-se</button>
+        <button
+         class="ghost" 
+         id="signUp">Cadastre-se</button>
       </div>
     </div>
   </div>
 </div>
 
 <script src="js/entrar.js"></script>
+<script src="js/users.js"></script>
 </body>
 
 </html>
