@@ -27,6 +27,40 @@ body {
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
+    /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    .overlay-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .overlay-panel {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .overlay-panel button {
+        display: block;
+        width: 80%; /* Largura ajustada */
+        margin: 10px auto; /* Margem para centralizar */
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    /* Ajuste dos botões */
+    .ghost {
+        margin: 10px 0; /* Espaçamento entre os botões */
+    }
+}
 
 }
 

@@ -15,7 +15,7 @@
 <img src="imagens/logo-form.png">
 <div class="container" id="container">
   <div class="form-container sign-up-container">
-    <form action="#">
+    <form>
       <h1>Criar Conta</h1>
       <div class="social-container">
         <a href="#" class="social"><img src="imagens/google.webp" alt="Google" class="social-icon"></a>
@@ -23,10 +23,19 @@
         <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
       </div>
       <span>ou use seu e-mail para se cadastrar</span>
-      <input id="nome" type="text" placeholder="Nome" required/>
-      <input id="email" type="email" placeholder="Email" required/>
-      <input id="senha" type="password" placeholder="Senha" required/>
-      <button>Cadastre-se</button>
+      <div class="input-box">
+        <input id="nome" type="text" placeholder="Nome" required>
+        <i class="mdi mdi-account"></i>
+    </div>
+    <div class="input-box">
+        <input id="email" type="email" placeholder="Email" required>
+        <i class="mdi mdi-email"></i>
+    </div>
+    <div class="input-box">
+        <input id="senha" type="password" placeholder="Senha" required>
+        <i class="mdi mdi-lock"></i>
+    </div>
+    <button onclick="adicionarUsuario()" type="button" class="btn">Cadastre-se</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
