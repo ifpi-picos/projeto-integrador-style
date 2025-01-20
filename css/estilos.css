@@ -149,7 +149,7 @@ form select:focus {
     border-color: #555;
 }
 
-form button {
+form button, a.link-botao {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
@@ -163,7 +163,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #333;
+    /* background-color: #333; */
 }
 
 footer {
@@ -198,8 +198,8 @@ nav ul.menu li.menu-item {
 
 nav ul.menu li.menu-item:hover,
 nav ul.menu li.menu-item.active {
-    background-color: #555;
-    color: #fff;
+    /* background-color: #555; */
+    /* color: #fff; */
 }
 
 /** final**/
@@ -225,7 +225,7 @@ p {
 }
 
 span {
-    font-size: 40px;
+    font-size: 20px;
 }
 
 a {
@@ -480,6 +480,7 @@ footer a {
     font-weight: 500;
     margin-left: 30px;
     position: relative;
+    border: none;
 }
 
 .navigation a::after {
@@ -507,21 +508,23 @@ footer a {
     font-size: 1em;
     text-align: center;
     transition: background 0.3s, color 0.3s;
+
+    .btn-link-cam{
+        background-color: purple;
+        border-radius: 5px;
+        border: 2px solid #4a4a4a;
+
+        }
 }
 
-.btn-login {
-    background: #fff;
-}
+
 
 .btn-register {
     background: transparent;
     color: #fff;
 }
 
-.btn-link:hover {
-    background: #4a4a4a;
-    color: #fff;
-}
+
 
 main {
     flex: 1;
@@ -530,6 +533,7 @@ main {
     align-items: center;
     padding: 80px 20px;
     text-align: center;
+    padding: -100px;
 
 }
 
@@ -674,7 +678,7 @@ footer {
     background-color: #FFFFFF;
     padding: 20px;
     border-radius: 10px;
-    width: 22%;
+    width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
@@ -703,7 +707,15 @@ footer {
 .container-servicos {
     flex-direction: column;
     margin-top: 140px;
+    margin-bottom: 100px;
 
+}
+
+.container-servicos .link-botao{
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-servicos h1 {
@@ -750,7 +762,7 @@ header .Nivia {
   }
   
   header a:hover {
-    background-color: #44475a;
+    /* background-color: #44475a; */
   }
   
   header span {
