@@ -24,7 +24,7 @@
       </div>
       <span>ou use seu e-mail para se cadastrar</span>
       <div class="input-box">
-        <input id="nome" type="text" placeholder="Nome" required>
+        <input id="name" type="text" placeholder="Nome" required>
         <i class="mdi mdi-account"></i>
     </div>
     <div class="input-box">
@@ -32,10 +32,10 @@
         <i class="mdi mdi-email"></i>
     </div>
     <div class="input-box">
-        <input id="senha" type="password" placeholder="Senha" required>
+        <input id="password" type="password" placeholder="Senha" required>
         <i class="mdi mdi-lock"></i>
     </div>
-    <button onclick="adicionarUsuario()" type="button" class="btn">Cadastre-se</button>
+    <button onclick="register()" type="button" class="btn">Cadastre-se</button>
     </form>
   </div>
   <div class="form-container sign-in-container">
@@ -47,10 +47,10 @@
         <a href="#" class="social"><img src="imagens/github.png" alt="GitHub" class="social-icon"></a>
       </div>
       <span>ou use sua conta</span>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Senha" />
+      <input type="email" id="e-mail" placeholder="Email" />
+      <input type="password" id="senha" placeholder="Senha" />
+      <button onclick="login()" type="button" class="btn">Entrar</button>
       <a href="#">Esqueceu sua senha?</a>
-      ghost
     </form>
   </div>
   <div class="overlay-container">
