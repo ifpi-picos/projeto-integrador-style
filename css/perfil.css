@@ -1,0 +1,164 @@
+/* GERAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* MENU LATERAL */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #7a57d1;
+    padding-top: 20px;
+    transition: 0.3s;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.menu-item {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+/* PERFIL */
+.profile {
+    padding: 30px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.bio {
+    color: #666;
+}
+
+/* BOTÃO EDITAR */
+.edit-btn {
+    background: #7a57d1;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CARROSSEL DE ESTILOS */
+.styles-carousel {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.style-card {
+    flex: 0 0 auto;
+    width: 120px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.style-card img {
+    width: 100px;
+    border-radius: 8px;
+}
+
+/* STYLEFEED */
+.style-feed {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.feed-item {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.feed-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.feed-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}

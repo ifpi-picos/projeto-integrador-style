@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Style</title>
+    <link rel="stylesheet" href="css/perfil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            z-index: 1001;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .sidebar .menu-item {
+            padding: 0.8rem 1rem;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 8px;
+        }
+
+        .sidebar .menu-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .profile {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+
+        .profile-info {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-info h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .profile-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info .bio {
+            color: #444;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .edit-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+            margin-top: 1rem;
+        }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .style-feed {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .style-feed h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .feed-item {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .feed-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .feed-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .feed-item p {
+            padding: 1rem;
+            color: #333;
+            font-weight: 500;
+            text-align: center;
+            background-color: rgba(255,255,255,0.9);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin: 0;
+        }
+
+        .preferences-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .preferences-section h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .preference-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .preference-item:last-child {
+            border-bottom: none;
+        }
+
+        .preference-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .preference-value {
+            color: #333;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- MENU LATERAL -->
+    <nav id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><button class="menu-item"><i class="fas fa-home"></i> Início</button></li>
+            <li><button class="menu-item"><i class="fas fa-user"></i> Perfil</button></li>
+            <li><button class="menu-item"><i class="fas fa-cog"></i> Configurações</button></li>
+            <li><button class="menu-item" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Sair</button></li>
+        </ul>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <button class="menu-btn" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <h1>Style</h1>
+        <div style="width: 24px;"></div> <!-- Espaçador para centralizar o título -->
+    </header>
+
+    <!-- PERFIL -->
+    <section class="profile">
+        <div class="profile-info">
+            <img src="imagens/default.png" alt="Foto de Perfil" class="profile-pic">
+            <h2>Carregando...</h2>
+            <p>@carregando</p>
+            <p class="bio">Carregando preferências...</p>
+            <button class="edit-btn"><i class="fas fa-edit"></i> Editar Perfil</button>
+        </div>
+
+        <!-- Nova seção de preferências -->
+        <div class="preferences-section">
+            <h3>Minhas Preferências</h3>
+            <div id="preferences-list">
+                <!-- Será preenchido via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- STYFEED -->
+    <section class="style-feed">
+        <h3>Meu StyFeed</h3>
+        <div class="feed-grid">
+            <button class="feed-item" onclick="verLook(1)">
+                <img src="imagens/look 1 (1).png" alt="Look 1">
+                <p>Look Casual</p>
+            </button>
+            <button class="feed-item" onclick="verLook(2)">
+                <img src="imagens/look 2 (1).png" alt="Look 2">
+                <p>Look Elegante</p>
+            </button>
+            <button class="feed-item" onclick="verLook(3)">
+                <img src="imagens/look 3 (1).png" alt="Look 3">
+                <p>Look Esportivo</p>
+            </button>
+            <button class="feed-item" onclick="verLook(4)">
+                <img src="imagens/look 4.png" alt="Look 4">
+                <p>Look Festa</p>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        // Função para alternar o menu lateral
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Função para fazer logout
+        function logout() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userId');
+            localStorage.removeItem('userName');
+            window.location.href = 'entrar.html';
+        }
+
+        // Função para carregar os dados do usuário
+        async function loadUserData() {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert('Você precisa estar logado para acessar esta página');
+                window.location.href = 'entrar.html';
+                return;
+            }
+
+            try {
+                // Buscar dados do usuário
+                const userResponse = await fetch('http://localhost:3000/me', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (userResponse.ok) {
+                    const userData = await userResponse.json();
+                    document.querySelector('.profile-info h2').textContent = userData.name;
+                    document.querySelector('.profile-info p').textContent = `@${userData.name.toLowerCase().replace(' ', '')}`;
+                }
+
+                // Buscar preferências do usuário
+                const preferencesResponse = await fetch('http://localhost:3000/preferences', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (preferencesResponse.ok) {
+                    const preferencesData = await preferencesResponse.json();
+                    // Atualizar a bio
+                    document.querySelector('.profile-info .bio').textContent = 
+                        `${preferencesData.estiloPrincipal} | ${preferencesData.ocasiaoComum}`;
+
+                    // Preencher a seção de preferências
+                    const preferencesList = document.getElementById('preferences-list');
+                    preferencesList.innerHTML = `
+                        <div class="preference-item">
+                            <span class="preference-label">Tipo Corporal:</span>
+                            <span class="preference-value">${preferencesData.tipoCorporal}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Formato Corporal:</span>
+                            <span class="preference-value">${preferencesData.formatoCorporal}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Estilo Principal:</span>
+                            <span class="preference-value">${preferencesData.estiloPrincipal}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Peça Frequente:</span>
+                            <span class="preference-value">${preferencesData.pecaFrequente}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Cor Preferida:</span>
+                            <span class="preference-value">${preferencesData.corPreferida}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Estilo a Evitar:</span>
+                            <span class="preference-value">${preferencesData.estiloEvitar}</span>
+                        </div>
+                        <div class="preference-item">
+                            <span class="preference-label">Ocasião Comum:</span>
+                            <span class="preference-value">${preferencesData.ocasiaoComum}</span>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                alert('Erro ao carregar dados do perfil');
+            }
+        }
+
+        // Função para ver um look específico
+        function verLook(lookId) {
+            alert(`Em breve você poderá ver mais detalhes do Look ${lookId}!`);
+        }
+
+        // Carregar dados quando a página carregar
+        document.addEventListener('DOMContentLoaded', loadUserData);
+    </script>
+</body>
+</html>

@@ -28,105 +28,144 @@
         </section>
 
         <section class="form-section">
-            <form>
+            <form id="preferencesForm">
                 <div class="form-group">
-                    <label for="estilo">Qual é o seu gênero?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Masculino</option>
-                        <option value="romantico">Feminino</option>
-                        <option value="outro">Prefiro não dizer</option>
+                    <label for="genero">Qual é o seu gênero?</label>
+                    <select id="genero" name="genero">
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Prefiro não dizer</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual é o seu tipo de corpo?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Small</option>
-                        <option value="romantico">Mid size</option>
-                        <option value="outro">Plus size</option>
+                    <label for="tipoCorporal">Qual é o seu tipo de corpo?</label>
+                    <select id="tipoCorporal" name="tipoCorporal">
+                        <option value="Small">Small</option>
+                        <option value="Mid size">Mid size</option>
+                        <option value="Plus size">Plus size</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual é o seu formato de corpo?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Ampulheta</option>
-                        <option value="romantico">Triângulo</option>
-                        <option value="outro">Triângulo invertido</option>
-                        <option value="outro">Oval</option>
-                        <option value="outro">Retângulo</option>
+                    <label for="formatoCorporal">Qual é o seu formato de corpo?</label>
+                    <select id="formatoCorporal" name="formatoCorporal">
+                        <option value="Ampulheta">Ampulheta</option>
+                        <option value="Triângulo">Triângulo</option>
+                        <option value="Triângulo invertido">Triângulo invertido</option>
+                        <option value="Oval">Oval</option>
+                        <option value="Retângulo">Retângulo</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual é o seu estilo principal?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Elegante/Clássico</option>
-                        <option value="romantico">Vintage/Retrô</option>
-                        <option value="outro">Urbano/Streetwear</option>
-                        <option value="outro">Boho/Despojado</option>
-                        <option value="outro">Casual</option>
-                        <option value="outro">Esportivo</option>
-                        <option value="outro">Minimalista</option>
+                    <label for="estiloPrincipal">Qual é o seu estilo principal?</label>
+                    <select id="estiloPrincipal" name="estiloPrincipal">
+                        <option value="Elegante/Clássico">Elegante/Clássico</option>
+                        <option value="Vintage/Retrô">Vintage/Retrô</option>
+                        <option value="Urbano/Streetwear">Urbano/Streetwear</option>
+                        <option value="Boho/Despojado">Boho/Despojado</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Esportivo">Esportivo</option>
+                        <option value="Minimalista">Minimalista</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual peça de roupa você usa com mais frequência?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Camisa</option>
-                        <option value="romantico">Calça</option>
-                        <option value="outro">Saia</option>
-                        <option value="outro">Vestido</option>
-                    <option value="outro">Outro</option>
+                    <label for="pecaFrequente">Qual peça de roupa você usa com mais frequência?</label>
+                    <select id="pecaFrequente" name="pecaFrequente">
+                        <option value="Camisa">Camisa</option>
+                        <option value="Calça">Calça</option>
+                        <option value="Saia">Saia</option>
+                        <option value="Vestido">Vestido</option>
+                        <option value="Outro">Outro</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual cor você prefere usar?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Branco</option>
-                        <option value="romantico">Preto</option>
-                        <option value="outro">Cinza</option>
-                        <option value="outro">Vermelho</option>
-                        <option value="outro">Verde</option>
-                        <option value="outro">Rosa</option>
-                        <option value="outro">Roxo</option>
-                        <option value="outro">Amarelo</option>
-                        <option value="outro">Laranja</option>
-                        <option value="outro">Marrom</option>
-                        <option value="outro">Outro</option>
+                    <label for="corPreferida">Qual cor você prefere usar?</label>
+                    <select id="corPreferida" name="corPreferida">
+                        <option value="Branco">Branco</option>
+                        <option value="Preto">Preto</option>
+                        <option value="Cinza">Cinza</option>
+                        <option value="Vermelho">Vermelho</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Roxo">Roxo</option>
+                        <option value="Amarelo">Amarelo</option>
+                        <option value="Laranja">Laranja</option>
+                        <option value="Marrom">Marrom</option>
+                        <option value="Outro">Outro</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Há algum estilo que você gostaria de evitar?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Elegante/Clássico</option>
-                        <option value="romantico">Vintage/Retrô</option>
-                        <option value="outro">Urbano/Streetwear</option>
-                        <option value="outro">Boho/Despojado</option>
-                        <option value="outro">Casual</option>
-                        <option value="outro">Esportivo</option>
-                        <option value="outro">Minimalista</option>
+                    <label for="estiloEvitar">Há algum estilo que você gostaria de evitar?</label>
+                    <select id="estiloEvitar" name="estiloEvitar">
+                        <option value="Elegante/Clássico">Elegante/Clássico</option>
+                        <option value="Vintage/Retrô">Vintage/Retrô</option>
+                        <option value="Urbano/Streetwear">Urbano/Streetwear</option>
+                        <option value="Boho/Despojado">Boho/Despojado</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Esportivo">Esportivo</option>
+                        <option value="Minimalista">Minimalista</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estilo">Qual a ocasião mais comum para se vestir?</label>
-                    <select id="estilo" name="estilo">
-                        <option value="casual">Trabalho</option>
-                        <option value="romantico">Festa</option>
-                        <option value="outro">Evento social</option>
-                        <option value="outro">Academia</option>
-                        <option value="outro">Casual diário</option>
-                        <option value="outro">Outro</option>
+                    <label for="ocasiaoComum">Qual a ocasião mais comum para se vestir?</label>
+                    <select id="ocasiaoComum" name="ocasiaoComum">
+                        <option value="Trabalho">Trabalho</option>
+                        <option value="Festa">Festa</option>
+                        <option value="Evento social">Evento social</option>
+                        <option value="Academia">Academia</option>
+                        <option value="Casual diário">Casual diário</option>
+                        <option value="Outro">Outro</option>
                     </select>
                 </div>
 
-                <a class="link-botao" href="tutorial.html">Enviar</a>
-            
-
+                <button type="submit" class="link-botao">Enviar</button>
             </form>
         </section>
     </main>
 
-    
+    <script>
+        document.getElementById('preferencesForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert('Você precisa estar logado para salvar suas preferências');
+                window.location.href = 'entrar.html';
+                return;
+            }
 
-    <script src="js/form.js"></script>
+            const formData = {
+                tipoCorporal: document.getElementById('tipoCorporal').value,
+                formatoCorporal: document.getElementById('formatoCorporal').value,
+                estiloPrincipal: document.getElementById('estiloPrincipal').value,
+                pecaFrequente: document.getElementById('pecaFrequente').value,
+                corPreferida: document.getElementById('corPreferida').value,
+                estiloEvitar: document.getElementById('estiloEvitar').value,
+                ocasiaoComum: document.getElementById('ocasiaoComum').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/preferences', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Preferências salvas com sucesso!');
+                    window.location.href = 'perfil.html';
+                } else {
+                    const data = await response.json();
+                    alert(data.error || 'Erro ao salvar preferências');
+                }
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao salvar preferências');
+            }
+        });
+    </script>
 
 </body>
 </html>
