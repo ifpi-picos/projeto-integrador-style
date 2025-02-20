@@ -333,7 +333,7 @@
 
             try {
                 // Buscar dados do usuário
-                const userResponse = await fetch('http://localhost:3000/me', {
+                const userResponse = await fetch('https://backend-style-btm7.onrender.com/me', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -346,7 +346,7 @@
                 }
 
                 // Buscar preferências do usuário
-                const preferencesResponse = await fetch('http://localhost:3000/preferences', {
+                const preferencesResponse = await fetch('https://backend-style-btm7.onrender.com/preferences', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
