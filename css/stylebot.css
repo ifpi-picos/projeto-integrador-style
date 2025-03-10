@@ -1,0 +1,134 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f9;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 280px;
+    background: #4A3F6D;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 24px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 12px;
+    background: #61578B;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.sidebar li:hover {
+    background: #7765B0;
+    transform: scale(1.05);
+}
+
+/* Chat principal */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensagens */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* Efeito de fade-in nas mensagens */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bot-message, .user-message {
+    max-width: 75%;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.bot-message {
+    background: #E0D7FF;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: #A786DF;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Campo de entrada */
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background: #E0D7FF;
+    border-radius: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.input-area button {
+    padding: 10px 15px;
+    background: #4A3F6D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-area button:hover {
+    background: #61578B;
+}
+
+/* Animação de digitação */
+.typing-animation {
+    font-style: italic;
+    color: gray;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}

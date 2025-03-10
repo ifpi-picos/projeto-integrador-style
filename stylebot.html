@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleBot - Assistente Virtual</title>
+    <link rel="stylesheet" href="css/stylebot.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <aside class="sidebar">
+            <h2>StyleBot</h2>
+            <ul>
+                <li class="menu-item">📌 Como funciona o app Style?</li>
+                <li class="menu-item">📌 Criar uma conta no Style</li>
+                <li class="menu-item">📌 O app é gratuito?</li>
+                <li class="menu-item">📌 Instagram do Style</li>
+                <li class="menu-item">📌 Novidades do Style</li>
+            </ul>
+        </aside>
+
+        <!-- Chat principal -->
+        <main class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="bot-message">
+                    <p>👋 Olá! Sou o StyleBot, seu assistente virtual. Escolha uma opção no menu ou me pergunte algo.</p>
+                </div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+                <button onclick="sendMessage()">Enviar</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/stylebot.js"></script>
+</body>
+</html>
