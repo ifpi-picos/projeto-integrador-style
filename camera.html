@@ -1,49 +1,549 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Style App</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <title>Style App | Visualizador AR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --secondary: #A29BFE;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --success: #00B894;
+            --shadow: 0 15px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Moderno */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 40px;
+            transition: var(--transition);
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .navigation {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: var(--transition);
+        }
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+        .menu-icon {
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+            transition: var(--transition);
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Conteúdo Principal */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: url('https://i.imgur.com/ZKMnXce.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 246, 250, 0.9);
+            z-index: 0;
+        }
+
+        .storage-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .storage-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .storage-container h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .storage-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        /* Seção da Câmera */
+        .camera-section {
+            margin-bottom: 30px;
+        }
+
+        .camera-option {
+            margin-bottom: 25px;
+        }
+
+        .camera-option label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 16px;
+        }
+
+        .file-input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .file-input-label {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .file-input-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        .file-input-label i {
+            margin-right: 8px;
+        }
+
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 0.1px;
+            height: 0.1px;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .file-name {
+            margin-left: 15px;
+            font-size: 14px;
+            color: #666;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Botões */
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .btn {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .link-botao {
+            flex: 1;
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-botao:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.2);
+        }
+
+        .link-botao i {
+            margin-right: 8px;
+        }
+
+        /* Mensagem de Sucesso */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            transform: translateX(150%);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .success-message.show {
+            transform: translateX(0);
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Pré-visualização da Imagem */
+        .image-preview-container {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--light);
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .navigation {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                box-shadow: var(--shadow);
+            }
+            
+            .navigation.show {
+                display: flex;
+            }
+            
+            .menu-icon {
+                display: block;
+            }
+            
+            .storage-container {
+                padding: 30px 20px;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .storage-container {
+                border-radius: 10px;
+            }
+            
+            .file-input-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .file-name {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header class="Nivia">
-        <div class="wauan">
-            <img src="imagens/logo-form.png" alt="Logo">
+    <header>
+        <div class="logo-container">
+            <img src="img/logo-form.png" alt="StyleHub Logo">
         </div>
         
-        <nav class="navigation">
-            <a href="index.html">Inicio</a>
+        <nav class="navigation" id="navigation">
+            <a href="inicio.html"><i class="fas fa-home"></i> Início</a>
+            <a href="guarda-roupa.html"><i class="fas fa-tshirt"></i> Guarda-Roupa</a>
+            <a href="combina.html"><i class="fas fa-magic"></i> Combinações</a>
+            <a href="#" class="active"><i class="fas fa-camera"></i> Visualizador AR</a>
+            <a href="perfil.html"><i class="fas fa-user"></i> Perfil</a>
         </nav>
-        <span onclick="toggleNav()"><ion-icon name="menu-outline"></ion-icon></span>
+        <span class="menu-icon" onclick="toggleNav()"><ion-icon name="menu-outline"></ion-icon></span>
     </header>
 
     <main>
         <div class="storage-container">
-            <h2>Acesse seu armazenamento</h2>
-            <div class="camera">
-                <label for="camera1">1ª CÂMERA</label>
-                <input type="file" id="camera1" onchange="showFileName(this)">
-                <span id="file-name1">Nenhum arquivo escolhido</span>
+            <h2>Visualizador de Realidade Aumentada</h2>
+            
+            <div class="camera-section">
+                <div class="camera-option">
+                    <label for="camera1"><i class="fas fa-tshirt"></i> Imagem da Roupa Superior</label>
+                    <div class="file-input-container">
+                        <label for="camera1" class="file-input-label">
+                            <i class="fas fa-upload"></i> Selecionar Imagem
+                        </label>
+                        <input type="file" id="camera1" class="file-input" accept="image/*" onchange="showFileName(this, 'file-name1', 'preview1')">
+                        <span id="file-name1" class="file-name">Nenhuma imagem selecionada</span>
+                    </div>
+                    <div id="preview1" class="image-preview-container">
+                        <img id="image-preview1" class="image-preview" src="" alt="Pré-visualização">
+                    </div>
+                </div>
+                
+                <div class="camera-option">
+                    <label for="camera2"><i class="fas fa-tshirt"></i> Imagem da Roupa Inferior</label>
+                    <div class="file-input-container">
+                        <label for="camera2" class="file-input-label">
+                            <i class="fas fa-upload"></i> Selecionar Imagem
+                        </label>
+                        <input type="file" id="camera2" class="file-input" accept="image/*" onchange="showFileName(this, 'file-name2', 'preview2')">
+                        <span id="file-name2" class="file-name">Nenhuma imagem selecionada</span>
+                    </div>
+                    <div id="preview2" class="image-preview-container">
+                        <img id="image-preview2" class="image-preview" src="" alt="Pré-visualização">
+                    </div>
+                </div>
             </div>
-            <div class="camera">
-                <label for="camera2">2ª CÂMERA</label>
-                <input type="file" id="camera2" onchange="showFileName(this)">
-                <span id="file-name2">Nenhum arquivo escolhido</span>
-            </div>
+            
             <div class="buttons">
-                <button class="btn" onclick="showSuccess('salvar')">Salvar</button>
-                <button class="btn" onclick="showSuccess('finalizar')">Finalizar</button>
+                <button class="btn" onclick="showSuccess()">
+                    <i class="fas fa-save"></i> Salvar Combinação
+                </button>
+                <a class="link-botao" href="perfil.html">
+                    <i class="fas fa-check"></i> Finalizar
+                </a>
             </div>
-            <div id="success-message" class="success-message"></div>
+        </div>
+        
+        <div id="success-message" class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <span>Combinação salva com sucesso!</span>
         </div>
     </main>
 
-
-    <script src="js/camera.js"></script>
+    <script>
+        // Menu Toggle
+        function toggleNav() {
+            const nav = document.getElementById('navigation');
+            nav.classList.toggle('show');
+        }
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (event) => {
+            const nav = document.getElementById('navigation');
+            const menuIcon = document.querySelector('.menu-icon');
+            
+            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+        
+        // Mostrar nome do arquivo e pré-visualização
+        function showFileName(input, fileNameId, previewId) {
+            const fileNameElement = document.getElementById(fileNameId);
+            const previewContainer = document.getElementById(previewId);
+            const previewImage = document.getElementById(`image-${previewId}`);
+            
+            if (input.files && input.files[0]) {
+                fileNameElement.textContent = input.files[0].name;
+                
+                // Mostrar pré-visualização
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                }
+                reader.readAsDataURL(input.files[0]);
+            } else {
+                fileNameElement.textContent = 'Nenhuma imagem selecionada';
+                previewContainer.style.display = 'none';
+            }
+        }
+        
+        // Mostrar mensagem de sucesso
+        function showSuccess() {
+            const successMessage = document.getElementById('success-message');
+            
+            // Verificar se ambos os arquivos foram selecionados
+            const file1 = document.getElementById('camera1').files[0];
+            const file2 = document.getElementById('camera2').files[0];
+            
+            if (!file1 || !file2) {
+                successMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i><span>Selecione ambas as imagens!</span>';
+                successMessage.style.background = '#d63031';
+                successMessage.classList.add('show');
+                
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 3000);
+                return;
+            }
+            
+            successMessage.innerHTML = '<i class="fas fa-check-circle"></i><span>Combinação salva com sucesso!</span>';
+            successMessage.style.background = 'var(--success)';
+            successMessage.classList.add('show');
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Animação ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            const storageContainer = document.querySelector('.storage-container');
+            storageContainer.style.animation = 'fadeInUp 0.8s ease';
+        });
+    </script>
 </body>
-
 </html>
-

@@ -3,47 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial da câmera</title>
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
+    <title>Style App | Tutorial da Câmera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --secondary: #A29BFE;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --success: #00B894;
+            --shadow: 0 15px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <header class="Nivia">
-        <div class="wauan">
-            <img src="imagens/logo-form.png" alt="Logo">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Moderno */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 40px;
+            transition: var(--transition);
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .navigation {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: var(--transition);
+        }
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+        .menu-icon {
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            display: none;
+            transition: var(--transition);
+        }
+
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Conteúdo Principal */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            background: url('https://i.imgur.com/ZKMnXce.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 246, 250, 0.9);
+            z-index: 0;
+        }
+
+        .tutorial-container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .tutorial-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .tutorial-container h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+        }
+
+        .tutorial-container h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        /* Passos do Tutorial */
+        .tutorial-steps {
+            display: grid;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .tutorial-step {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+        }
+
+        .tutorial-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .tutorial-step h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .tutorial-step h3 i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .tutorial-step p {
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Botão */
+        .tutorial-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .link-botao {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            text-decoration: none;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .link-botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        .link-botao i {
+            margin-right: 10px;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .navigation {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(135deg, var(--primary), var(--secondary));
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                box-shadow: var(--shadow);
+            }
+            
+            .navigation.show {
+                display: flex;
+            }
+            
+            .menu-icon {
+                display: block;
+            }
+            
+            .tutorial-container {
+                padding: 30px 20px;
+            }
+            
+            .tutorial-steps {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tutorial-container {
+                border-radius: 10px;
+            }
+            
+            .tutorial-step {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="imagens/logo-form.png" alt="StyleHub Logo">
         </div>
         
-        <nav class="navigation">
-            <a href="index.html">Inicio</a>
+        <nav class="navigation" id="navigation">
+            <a href="index.html"><i class="fas fa-home"></i> Início</a>
+            <a href="#"><i class="fas fa-camera"></i> Tutorial</a>
         </nav>
-        
+        <span class="menu-icon" onclick="toggleNav()"><ion-icon name="menu-outline"></ion-icon></span>
     </header>
 
-    
-    <div class="container container-servicos">
-        <h1 >Tutorial de como adicionar suas roupas:</h1>
-        <div class="services">
-            <div class="service">
-                <h3>1º passo: Acesso a câmera</h3>
-                <p>Inicie o site Style e navegue para a seção especifica destinada à câmera. Procure por ícones ou guias que indiquem a função de captura de imagens dentro do site.</p>
-            </div>
-
-            <div class="service">
-                <h3>2º passo: Preparação do ambiente:</h3>
-                <p>
-                    Escolha fotos bem iluminadas para garantir a nitidez das roupas. Certifique-se de que o ambiente esteja organizado para destacar as peças que deseja fotografar.</p>
-            </div>
-
-            <div class="service">
-                <h3>3º passo: Posicionamento das Roupas:</h3>
-                <p>
-                    Escolha fotos em que as roupas estejam em uma superficie plana e limpa. Experimente diferentes disposições e arranjos para encontrar a melhor forma de exibir as características das peças</p>
-            </div>
-
+    <main>
+        <div class="tutorial-container">
+            <h1>Tutorial de como adicionar suas roupas</h1>
             
+            <div class="tutorial-steps">
+                <div class="tutorial-step">
+                    <h3><i class="fas fa-camera"></i> 1º Passo: Acesso à Câmera</h3>
+                    <p>Inicie o site Style e navegue para a seção específica destinada à câmera. Procure por ícones ou guias que indiquem a função de captura de imagens dentro do site. Certifique-se de permitir o acesso à câmera quando solicitado.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <h3><i class="fas fa-lightbulb"></i> 2º Passo: Preparação do Ambiente</h3>
+                    <p>Escolha um local bem iluminado para garantir a nitidez das fotos das roupas. Prefira luz natural ou iluminação difusa para evitar sombras fortes. Certifique-se de que o ambiente esteja organizado para destacar as peças que deseja fotografar.</p>
+                </div>
+
+                <div class="tutorial-step">
+                    <h3><i class="fas fa-tshirt"></i> 3º Passo: Posicionamento das Roupas</h3>
+                    <p>Coloque as roupas em uma superfície plana e limpa, de preferência com um fundo neutro. Experimente diferentes disposições e arranjos para encontrar a melhor forma de exibir as características das peças. Para melhores resultados, fotografe as roupas sem dobras ou amassados.</p>
+                </div>
+            </div>
+            
+            <div class="tutorial-button">
+                <a class="link-botao" href="camera.html">
+                    <i class="fas fa-arrow-right"></i> Começar
+                </a>
+            </div>
         </div>
-        <a class="link-botao" href="camera.html">Enviar</a>
-    </div>
+    </main>
+
+    <script>
+        // Menu Toggle
+        function toggleNav() {
+            const nav = document.getElementById('navigation');
+            nav.classList.toggle('show');
+        }
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (event) => {
+            const nav = document.getElementById('navigation');
+            const menuIcon = document.querySelector('.menu-icon');
             
+            if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
+                nav.classList.remove('show');
+            }
+        });
+        
+        // Animação ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            const tutorialContainer = document.querySelector('.tutorial-container');
+            tutorialContainer.style.animation = 'fadeInUp 0.8s ease';
+        });
+    </script>
 </body>
 </html>

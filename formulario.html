@@ -4,8 +4,269 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defina Seu Estilo</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --secondary: #A29BFE;
+            --dark: #2D3436;
+            --light: #F5F6FA;
+            --accent: #FD79A8;
+            --success: #00B894;
+            --shadow: 0 15px 30px rgba(0,0,0,0.1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header (mantido conforme original) */
+        header.formu {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo img {
+            height: 40px;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: var(--transition);
+        }
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+        /* Conteúdo Principal */
+        main.escolha {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background: url('https://i.imgur.com/ZKMnXce.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        main.escolha::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 246, 250, 0.9);
+            z-index: 0;
+        }
+
+        /* Seção Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+
+        /* Formulário */
+        .form-section {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            width: 100%;
+            max-width: 700px;
+            z-index: 1;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 16px;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            color: var(--dark);
+            background-color: white;
+            transition: var(--transition);
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 15px;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+
+        /* Botão */
+        .link-botao {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .link-botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        /* Mensagem de Sucesso */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            transform: translateX(150%);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .success-message.show {
+            transform: translateX(0);
+        }
+
+        .success-message i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .form-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .form-section {
+                border-radius: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="formu">
@@ -16,9 +277,8 @@
         </div>
 
         <nav class="navigation">
-            <a href="#"><a href="index.html">Início</a>
+            <a href="index.html">Início</a>
         </nav>
-        
     </header>
 
     <main class="escolha">
@@ -30,7 +290,7 @@
         <section class="form-section">
             <form id="preferencesForm">
                 <div class="form-group">
-                    <label for="genero">Qual é o seu gênero?</label>
+                    <label for="genero"><i class="fas fa-user"></i> Qual é o seu gênero?</label>
                     <select id="genero" name="genero">
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
@@ -38,7 +298,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="tipoCorporal">Qual é o seu tipo de corpo?</label>
+                    <label for="tipoCorporal"><i class="fas fa-tshirt"></i> Qual é o seu tipo de corpo?</label>
                     <select id="tipoCorporal" name="tipoCorporal">
                         <option value="Small">Small</option>
                         <option value="Mid size">Mid size</option>
@@ -46,7 +306,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="formatoCorporal">Qual é o seu formato de corpo?</label>
+                    <label for="formatoCorporal"><i class="fas fa-user-circle"></i> Qual é o seu formato de corpo?</label>
                     <select id="formatoCorporal" name="formatoCorporal">
                         <option value="Ampulheta">Ampulheta</option>
                         <option value="Triângulo">Triângulo</option>
@@ -56,7 +316,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estiloPrincipal">Qual é o seu estilo principal?</label>
+                    <label for="estiloPrincipal"><i class="fas fa-star"></i> Qual é o seu estilo principal?</label>
                     <select id="estiloPrincipal" name="estiloPrincipal">
                         <option value="Elegante/Clássico">Elegante/Clássico</option>
                         <option value="Vintage/Retrô">Vintage/Retrô</option>
@@ -68,7 +328,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="pecaFrequente">Qual peça de roupa você usa com mais frequência?</label>
+                    <label for="pecaFrequente"><i class="fas fa-shopping-bag"></i> Qual peça de roupa você usa com mais frequência?</label>
                     <select id="pecaFrequente" name="pecaFrequente">
                         <option value="Camisa">Camisa</option>
                         <option value="Calça">Calça</option>
@@ -78,7 +338,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="corPreferida">Qual cor você prefere usar?</label>
+                    <label for="corPreferida"><i class="fas fa-palette"></i> Qual cor você prefere usar?</label>
                     <select id="corPreferida" name="corPreferida">
                         <option value="Branco">Branco</option>
                         <option value="Preto">Preto</option>
@@ -94,7 +354,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="estiloEvitar">Há algum estilo que você gostaria de evitar?</label>
+                    <label for="estiloEvitar"><i class="fas fa-ban"></i> Há algum estilo que você gostaria de evitar?</label>
                     <select id="estiloEvitar" name="estiloEvitar">
                         <option value="Elegante/Clássico">Elegante/Clássico</option>
                         <option value="Vintage/Retrô">Vintage/Retrô</option>
@@ -106,7 +366,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ocasiaoComum">Qual a ocasião mais comum para se vestir?</label>
+                    <label for="ocasiaoComum"><i class="fas fa-calendar-alt"></i> Qual a ocasião mais comum para se vestir?</label>
                     <select id="ocasiaoComum" name="ocasiaoComum">
                         <option value="Trabalho">Trabalho</option>
                         <option value="Festa">Festa</option>
@@ -117,9 +377,16 @@
                     </select>
                 </div>
 
-                <button type="submit" class="link-botao">Enviar</button>
+                <button type="submit" class="link-botao">
+                    <i class="fas fa-paper-plane"></i> Enviar Preferências
+                </button>
             </form>
         </section>
+        
+        <div id="success-message" class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <span>Preferências salvas com sucesso!</span>
+        </div>
     </main>
 
     <script>
@@ -154,8 +421,13 @@
                 });
 
                 if (response.ok) {
-                    alert('Preferências salvas com sucesso!');
-                    window.location.href = 'perfil.html';
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.classList.add('show');
+                    
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                        window.location.href = 'perfil.html';
+                    }, 2000);
                 } else {
                     const data = await response.json();
                     alert(data.error || 'Erro ao salvar preferências');
@@ -166,6 +438,5 @@
             }
         });
     </script>
-
 </body>
 </html>
